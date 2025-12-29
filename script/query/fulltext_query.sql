@@ -1,11 +1,11 @@
-
--- ตัวอย่าง query full-text search
+EXPLAIN
+-- EXPLAIN ANALYZE
 SELECT
     id,
     title,
     MATCH(title, body) AGAINST ('MySQL search' IN NATURAL LANGUAGE MODE) AS relevance
 FROM
-    articles
+    article_fulltexts
 WHERE
     MATCH(title, body) AGAINST ('MySQL search' IN NATURAL LANGUAGE MODE)
 ORDER BY
